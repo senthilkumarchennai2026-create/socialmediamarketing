@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="ta">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Social Media Marketing Coaching – Level 2 | Chennai</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:wght@400;500;600&family=Noto+Sans+Tamil:wght@400;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --pink: #ff3cac;
+    --purple: #7b2ff7;
+    --light-purple: #c77dff;
+    --grad: linear-gradient(135deg, #7b2ff7 0%, #ff3cac 100%);
+    --grad2: linear-gradient(135deg, #c77dff 0%, #ff6ec7 100%);
+    --dark: #0e0019;
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(199,125,255,0.2);
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', 'Noto Sans Tamil', sans-serif;
+    background: #0e0019;
+    color: #f0e6ff;
+    overflow-x: hidden;
+    line-height: 1.6;
+  }
+  h1,h2,h3 { font-family: 'Syne','Noto Sans Tamil',sans-serif; }
+  body::before {
+    content:''; position:fixed; inset:0; z-index:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events:none;
+  }
+  section,nav,footer { position:relative; z-index:1; }
+
+  .grad-text { background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .ta { font-family:'Noto Sans Tamil',sans-serif; }
+  .section-label { font-size:0.72rem; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--pink); margin-bottom:0.6rem; font-family:'Noto Sans Tamil',sans-serif; }
+  .section-title { font-size:clamp(1.7rem,3.5vw,2.6rem); line-height:1.2; margin-bottom:0.8rem; }
+  .section-sub { color:#c4a8e8; max-width:560px; line-height:1.85; margin-bottom:2.8rem; font-family:'Noto Sans Tamil',sans-serif; font-size:0.95rem; }
+
+  /* ── NAV ── */
+  nav {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:1.1rem 5%;
+    background:rgba(14,0,25,0.92); backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,60,172,0.15);
+    position:sticky; top:0; z-index:100;
+  }
+  .logo { font-family:'Syne',sans-serif; font-size:0.95rem; font-weight:800; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .nav-cta { background:var(--grad); color:#fff; font-weight:700; font-size:0.82rem; padding:0.5rem 1.2rem; border-radius:50px; text-decoration:none; transition:opacity 0.2s; white-space:nowrap; font-family:'Noto Sans Tamil',sans-serif; }
+  .nav-cta:hover { opacity:0.85; }
+
+  /* ── HERO ── */
+  .hero {
+    min-height:95vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:5rem 6% 4rem;
+    background:
+      radial-gradient(ellipse 80% 60% at 50% 0%, rgba(123,47,247,0.45) 0%, transparent 70%),
+      radial-gradient(ellipse 60% 50% at 85% 85%, rgba(255,60,172,0.3) 0%, transparent 65%);
+  }
+  .hero-badge {
+    display:inline-block; background:rgba(255,60,172,0.15); border:1px solid rgba(255,60,172,0.4);
+    color:#ff9de2; font-size:0.8rem; font-weight:600; padding:0.4rem 1.2rem; border-radius:50px;
+    margin-bottom:1.8rem; animation:fadeUp 0.6s ease both; font-family:'Noto Sans Tamil',sans-serif;
+  }
+  .hero h1 {
+    font-size:clamp(2rem,5.5vw,4.2rem); line-height:1.15;
+    margin-bottom:1.2rem; animation:fadeUp 0.7s 0.1s ease both;
+    font-family:'Noto Sans Tamil',sans-serif; font-weight:700;
+  }
+  .hero h1 em { font-style:normal; display:block; font-size:0.65em; color:#d4b8f5; margin-top:0.4rem; }
+  .hero-sub {
+    font-size:clamp(0.95rem,2vw,1.12rem); color:#d4b8f5;
+    max-width:640px; line-height:1.9; margin-bottom:1.8rem;
+    animation:fadeUp 0.7s 0.2s ease both; font-family:'Noto Sans Tamil',sans-serif;
+  }
+  .hero-proof {
+    display:flex; flex-wrap:wrap; gap:0.75rem; justify-content:center;
+    margin-bottom:2.5rem; animation:fadeUp 0.7s 0.3s ease both;
+  }
+  .proof-chip {
+    background:rgba(123,47,247,0.15); border:1px solid rgba(123,47,247,0.35);
+    color:#e0c8ff; font-size:0.85rem; font-weight:600;
+    padding:0.45rem 1.1rem; border-radius:50px; font-family:'Noto Sans Tamil',sans-serif;
+  }
+  .hero-cta-group { display:flex; gap:1rem; flex-wrap:wrap; justify-content:center; animation:fadeUp 0.7s 0.4s ease both; }
+  .hero-cta-note { font-size:0.78rem; color:#9a7dc4; margin-top:0.8rem; font-family:'Noto Sans Tamil',sans-serif; animation:fadeUp 0.7s 0.5s ease both; }
+
+  .btn-primary {
+    display:inline-flex; align-items:center; gap:0.6rem;
+    background:var(--grad); color:#fff; font-weight:700; font-size:1rem;
+    padding:1rem 2rem; border-radius:50px; text-decoration:none;
+    box-shadow:0 8px 32px rgba(255,60,172,0.4);
+    transition:transform 0.2s, box-shadow 0.2s;
+    font-family:'Noto Sans Tamil',sans-serif;
+  }
+  .btn-primary:hover { transform:translateY(-2px); box-shadow:0 12px 40px rgba(255,60,172,0.55); }
+  .btn-secondary {
+    display:inline-flex; align-items:center; gap:0.5rem;
+    background:rgba(255,255,255,0.07); border:1px solid rgba(199,125,255,0.35);
+    color:#e0c8ff; font-weight:600; font-size:0.95rem;
+    padding:1rem 1.8rem; border-radius:50px; text-decoration:none;
+    transition:background 0.2s;
+  }
+  .btn-secondary:hover { background:rgba(255,255,255,0.12); }
+
+  /* ── PAIN SECTION ── */
+  .pain-section {
+    padding:5rem 6%;
+    background:radial-gradient(ellipse 70% 50% at 70% 50%, rgba(255,60,172,0.08) 0%, transparent 70%);
+  }
+  .pain-content { max-width:700px; }
+  .pain-did {
+    display:flex; flex-direction:column; gap:0.7rem; margin:1.5rem 0;
+  }
+  .pain-did-item {
+    display:flex; align-items:center; gap:0.8rem;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(199,125,255,0.15);
+    border-radius:12px; padding:0.8rem 1.2rem;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.92rem; color:#d4b8f5;
+  }
+  .pain-did-item .tick { font-size:1.1rem; }
+  .pain-but {
+    font-family:'Noto Sans Tamil',sans-serif; font-size:1.05rem; font-weight:700;
+    color:#ff9de2; margin:1.5rem 0 1rem; text-align:center;
+  }
+  .pain-problems { display:flex; flex-direction:column; gap:0.65rem; }
+  .pain-problems .prob {
+    display:flex; align-items:flex-start; gap:0.8rem;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.9rem; color:#c4a8e8;
+    padding:0.7rem 1.2rem;
+    background:rgba(255,60,172,0.06); border:1px solid rgba(255,60,172,0.2); border-radius:12px;
+  }
+  .prob .x { color:#ff3cac; font-size:1rem; flex-shrink:0; margin-top:0.1rem; }
+  .pain-reality {
+    margin-top:1.5rem; padding:1.2rem 1.5rem;
+    background:rgba(123,47,247,0.12); border-left:3px solid var(--purple);
+    border-radius:0 12px 12px 0;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.92rem; color:#d4b8f5; line-height:1.8;
+  }
+
+  /* ── MONEY BLEED ── */
+  .money-section {
+    padding:5rem 6%;
+    background:radial-gradient(ellipse 60% 40% at 20% 50%, rgba(123,47,247,0.1) 0%, transparent 70%);
+  }
+  .money-table-wrap { overflow-x:auto; margin:2rem 0; }
+  table {
+    width:100%; border-collapse:collapse;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.9rem;
+    max-width:600px;
+  }
+  thead tr { background:var(--grad); }
+  thead th { padding:0.9rem 1.4rem; text-align:left; font-weight:700; color:#fff; font-size:0.85rem; letter-spacing:0.04em; }
+  tbody tr { border-bottom:1px solid rgba(199,125,255,0.12); transition:background 0.15s; }
+  tbody tr:hover { background:rgba(255,255,255,0.04); }
+  tbody td { padding:0.85rem 1.4rem; color:#d4b8f5; }
+  tbody td:last-child { color:#ff9de2; font-weight:600; }
+  .total-row td { background:rgba(255,60,172,0.1); font-weight:700; color:#ff9de2 !important; font-size:0.95rem; }
+  .money-cta-box {
+    margin-top:1.8rem; padding:1.4rem 1.8rem;
+    background:rgba(123,47,247,0.12); border:1px solid rgba(123,47,247,0.3); border-radius:16px;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:1rem; line-height:1.8; color:#e0c8ff;
+    max-width:600px;
+  }
+  .money-cta-box strong { color:#ff9de2; }
+
+  /* ── OLD WAY vs NEW WAY ── */
+  .compare-section { padding:5rem 6%; }
+  .compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2.5rem; max-width:720px; }
+  @media(max-width:560px){ .compare-grid { grid-template-columns:1fr; } }
+  .compare-col { border-radius:20px; overflow:hidden; }
+  .compare-header {
+    padding:1rem 1.5rem; font-family:'Noto Sans Tamil',sans-serif;
+    font-weight:700; font-size:0.95rem; text-align:center;
+  }
+  .compare-header.bad { background:rgba(255,60,172,0.12); color:#ff9de2; border:1px solid rgba(255,60,172,0.25); border-bottom:none; border-radius:20px 20px 0 0; }
+  .compare-header.good { background:rgba(123,47,247,0.2); color:#c77dff; border:1px solid rgba(123,47,247,0.3); border-bottom:none; border-radius:20px 20px 0 0; }
+  .compare-items { list-style:none; }
+  .compare-items.bad-list { background:rgba(255,60,172,0.05); border:1px solid rgba(255,60,172,0.2); border-top:none; border-radius:0 0 20px 20px; }
+  .compare-items.good-list { background:rgba(123,47,247,0.08); border:1px solid rgba(123,47,247,0.25); border-top:none; border-radius:0 0 20px 20px; }
+  .compare-items li {
+    display:flex; align-items:center; gap:0.7rem;
+    padding:0.75rem 1.2rem; border-bottom:1px solid rgba(255,255,255,0.05);
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.87rem; color:#d4b8f5;
+  }
+  .compare-items li:last-child { border-bottom:none; }
+  .ci-bad { color:#ff3cac; flex-shrink:0; }
+  .ci-good { color:#a78bfa; flex-shrink:0; }
+
+  /* ── OUTCOMES ── */
+  .outcomes-section { padding:5rem 6%; }
+  .outcomes-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:1.1rem; margin-top:2.5rem; }
+  .outcome-card {
+    background:rgba(123,47,247,0.08); border:1px solid rgba(123,47,247,0.25);
+    border-radius:16px; padding:1.3rem 1.5rem;
+    display:flex; align-items:flex-start; gap:0.9rem;
+    transition:border-color 0.2s, background 0.2s;
+  }
+  .outcome-card:hover { border-color:var(--light-purple); background:rgba(123,47,247,0.14); }
+  .outcome-tick { font-size:1.1rem; flex-shrink:0; margin-top:0.15rem; }
+  .outcome-card p { font-family:'Noto Sans Tamil',sans-serif; font-size:0.88rem; color:#d4b8f5; line-height:1.65; }
+  .outcome-footer {
+    margin-top:1.8rem; padding:1.2rem 1.6rem;
+    background:var(--grad); border-radius:14px;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.95rem; font-weight:700; color:#fff;
+    display:inline-block;
+  }
+
+  /* ── WHO IT'S FOR ── */
+  .for-section { padding:5rem 6%; background:linear-gradient(180deg,transparent 0%,rgba(75,0,130,0.1) 100%); }
+  .for-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2.5rem; max-width:700px; }
+  @media(max-width:560px){ .for-grid { grid-template-columns:1fr; } }
+  .for-col-title { font-family:'Noto Sans Tamil',sans-serif; font-size:0.85rem; font-weight:700; margin-bottom:1rem; padding:0.5rem 1rem; border-radius:8px; display:inline-block; }
+  .for-yes .for-col-title { background:rgba(123,47,247,0.2); color:#c77dff; }
+  .for-no .for-col-title { background:rgba(255,60,172,0.1); color:#ff9de2; }
+  .for-list { list-style:none; display:flex; flex-direction:column; gap:0.6rem; }
+  .for-list li {
+    display:flex; align-items:flex-start; gap:0.7rem;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.86rem; color:#d4b8f5;
+    padding:0.65rem 1rem;
+    border-radius:10px; line-height:1.6;
+  }
+  .for-yes .for-list li { background:rgba(123,47,247,0.08); border:1px solid rgba(123,47,247,0.2); }
+  .for-no .for-list li { background:rgba(255,60,172,0.05); border:1px solid rgba(255,60,172,0.15); }
+  .for-icon { flex-shrink:0; margin-top:0.1rem; }
+
+  /* ── HOW IT WORKS ── */
+  .how-section { padding:5rem 6%; }
+  .how-steps { display:flex; flex-direction:column; gap:0; margin-top:2.5rem; max-width:620px; position:relative; }
+  .how-steps::before { content:''; position:absolute; left:22px; top:0; bottom:0; width:2px; background:linear-gradient(180deg,var(--purple),var(--pink)); z-index:0; }
+  .how-step { display:flex; gap:1.4rem; align-items:flex-start; padding:1.2rem 0; position:relative; z-index:1; }
+  .step-num {
+    width:46px; height:46px; border-radius:50%; flex-shrink:0;
+    background:var(--grad); display:flex; align-items:center; justify-content:center;
+    font-family:'Syne',sans-serif; font-size:1rem; font-weight:800; color:#fff;
+    box-shadow:0 0 20px rgba(123,47,247,0.4);
+  }
+  .step-content h3 { font-size:0.98rem; margin-bottom:0.25rem; }
+  .step-content p { font-family:'Noto Sans Tamil',sans-serif; font-size:0.84rem; color:#c4a8e8; line-height:1.65; }
+  .how-note {
+    margin-top:1.5rem; padding:1rem 1.4rem;
+    background:rgba(255,60,172,0.08); border:1px solid rgba(255,60,172,0.25); border-radius:14px;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.9rem; color:#ff9de2; font-weight:600;
+    max-width:620px;
+  }
+
+  /* ── CURRICULUM ── */
+  .curriculum { padding:5rem 6%; }
+  .curriculum-pills { display:flex; flex-wrap:wrap; gap:0.85rem; margin-top:2rem; }
+  .curr-pill {
+    background:rgba(123,47,247,0.12); border:1px solid rgba(123,47,247,0.3);
+    border-radius:50px; padding:0.7rem 1.3rem;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.87rem; color:#e0c8ff; font-weight:600;
+    display:flex; align-items:center; gap:0.5rem;
+    transition:background 0.2s, border-color 0.2s;
+  }
+  .curr-pill:hover { background:rgba(255,60,172,0.12); border-color:var(--pink); }
+  .curr-ratio {
+    margin-top:2rem; padding:1.2rem 1.6rem;
+    background:rgba(255,255,255,0.04); border:1px solid rgba(199,125,255,0.2); border-radius:16px;
+    display:flex; align-items:center; gap:1.5rem; flex-wrap:wrap; max-width:500px;
+  }
+  .ratio-item { text-align:center; }
+  .ratio-item .num { font-family:'Syne',sans-serif; font-size:2rem; font-weight:800; background:var(--grad2); -webkit-background-clip:text; -webkit-text-fill-color:transparent; }
+  .ratio-item .lbl { font-family:'Noto Sans Tamil',sans-serif; font-size:0.78rem; color:#c4a8e8; }
+  .ratio-divider { color:rgba(199,125,255,0.3); font-size:1.5rem; }
+
+  /* ── PRICING ── */
+  .pricing-section { padding:5rem 6%; display:flex; flex-direction:column; align-items:center; }
+  .pricing-card {
+    border-radius:28px; padding:3rem 3.5rem;
+    max-width:500px; width:100%; text-align:center;
+    position:relative; background:#160028;
+    box-shadow:0 0 60px rgba(123,47,247,0.2);
+  }
+  .pricing-card::before {
+    content:''; position:absolute; inset:0; border-radius:28px; padding:2px;
+    background:var(--grad);
+    -webkit-mask:linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite:xor; mask-composite:exclude; pointer-events:none;
+  }
+  .price-badge { display:inline-block; background:var(--grad); color:#fff; font-size:0.75rem; font-weight:700; letter-spacing:0.06em; text-transform:uppercase; padding:0.35rem 1rem; border-radius:50px; margin-bottom:0.8rem; }
+  .price-label { font-family:'Noto Sans Tamil',sans-serif; font-size:0.9rem; color:#ff9de2; font-weight:700; margin-bottom:0.5rem; }
+  .price-amount { font-family:'Syne',sans-serif; font-size:3.8rem; font-weight:800; background:var(--grad); -webkit-background-clip:text; -webkit-text-fill-color:transparent; line-height:1; }
+  .price-period { font-size:0.88rem; color:#b8a0d6; margin:0.3rem 0 1.5rem; font-family:'Noto Sans Tamil',sans-serif; }
+  .price-features { list-style:none; text-align:left; margin-bottom:2rem; }
+  .price-features li { display:flex; align-items:center; gap:0.7rem; padding:0.6rem 0; border-bottom:1px solid rgba(255,255,255,0.07); font-size:0.88rem; color:#d4b8f5; font-family:'Noto Sans Tamil',sans-serif; }
+  .price-features li:last-child { border-bottom:none; }
+  .check { color:var(--pink); }
+  .price-value-note {
+    margin-top:1.5rem; padding:1rem 1.2rem;
+    background:rgba(255,60,172,0.08); border:1px solid rgba(255,60,172,0.2); border-radius:12px;
+    font-family:'Noto Sans Tamil',sans-serif; font-size:0.87rem; color:#ff9de2; line-height:1.7;
+  }
+
+  /* ── RISK REVERSAL ── */
+  .risk-section {
+    padding:4rem 6%; display:flex; justify-content:center;
+  }
+  .risk-card {
+    max-width:560px; width:100%; text-align:center;
+    background:rgba(255,255,255,0.03); border:1px dashed rgba(199,125,255,0.3);
+    border-radius:24px; padding:2.5rem 2rem;
+  }
+  .risk-card .risk-emoji { font-size:2.5rem; margin-bottom:1rem; display:block; }
+  .risk-card h3 { font-size:1.3rem; margin-bottom:0.8rem; }
+  .risk-card p { font-family:'Noto Sans Tamil',sans-serif; font-size:0.92rem; color:#c4a8e8; line-height:1.85; margin-bottom:1.5rem; }
+  .risk-note { font-family:'Noto Sans Tamil',sans-serif; font-size:0.82rem; color:#9a7dc4; }
+
+  /* ── TESTIMONIALS ── */
+  .testimonials { padding:5rem 6%; }
+  .testi-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:1.4rem; margin-top:2.8rem; }
+  .testi-card { background:var(--card-bg); border:1px solid var(--card-border); border-radius:20px; padding:1.8rem; }
+  .stars { color:#ffb347; font-size:0.9rem; margin-bottom:0.8rem; }
+  .testi-result {
+    background:var(--grad); color:#fff; font-size:0.82rem; font-weight:700;
+    padding:0.3rem 0.9rem; border-radius:50px; display:inline-block; margin-bottom:0.9rem;
+    font-family:'Noto Sans Tamil',sans-serif;
+  }
+  .testi-card p { font-size:0.88rem; color:#d4b8f5; line-height:1.8; margin-bottom:1.2rem; font-family:'Noto Sans Tamil',sans-serif; }
+  .testi-author { display:flex; align-items:center; gap:0.75rem; }
+  .testi-avatar { width:40px; height:40px; border-radius:50%; background:var(--grad); display:flex; align-items:center; justify-content:center; font-family:'Syne',sans-serif; font-size:1rem; font-weight:800; color:#fff; flex-shrink:0; }
+  .testi-name { font-weight:600; font-size:0.88rem; }
+  .testi-role { font-size:0.77rem; color:#9a7dc4; font-family:'Noto Sans Tamil',sans-serif; }
+
+  /* ── FAQ ── */
+  .faq-section { padding:4rem 6%; max-width:700px; margin:0 auto; }
+  .faq-item { border-bottom:1px solid rgba(199,125,255,0.15); padding:1.4rem 0; }
+  .faq-q { font-family:'Noto Sans Tamil',sans-serif; font-size:0.95rem; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:1rem; font-weight:600; }
+  .faq-q span { color:var(--light-purple); font-size:1.2rem; transition:transform 0.3s; flex-shrink:0; }
+  .faq-a { font-size:0.86rem; color:#c4a8e8; line-height:1.8; margin-top:0.8rem; display:none; font-family:'Noto Sans Tamil',sans-serif; }
+  .faq-item.open .faq-a { display:block; }
+  .faq-item.open .faq-q span { transform:rotate(45deg); }
+
+  /* ── FINAL CTA ── */
+  .final-cta {
+    padding:6rem 6%; text-align:center;
+    background:radial-gradient(ellipse 80% 60% at 50% 50%, rgba(123,47,247,0.25) 0%, transparent 70%);
+  }
+  .final-cta h2 { font-size:clamp(1.7rem,4vw,2.8rem); margin-bottom:0.6rem; font-family:'Noto Sans Tamil',sans-serif; line-height:1.3; }
+  .final-cta .sub { color:#c4a8e8; margin-bottom:0.5rem; font-size:1rem; font-family:'Noto Sans Tamil',sans-serif; line-height:1.85; }
+  .final-cta .final-note { font-size:0.82rem; color:#7a5e9e; font-family:'Noto Sans Tamil',sans-serif; margin-top:1rem; }
+
+  /* ── FOOTER ── */
+  footer { border-top:1px solid rgba(255,60,172,0.1); padding:2rem 6%; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1rem; font-size:0.82rem; color:#7a5e9e; font-family:'Noto Sans Tamil',sans-serif; }
+
+  /* ── FLOAT WA ── */
+  .float-wa {
+    position:fixed; bottom:1.8rem; right:1.8rem; z-index:200;
+    width:60px; height:60px; border-radius:50%;
+    background:#25d366; display:flex; align-items:center; justify-content:center;
+    box-shadow:0 6px 24px rgba(37,211,102,0.5); text-decoration:none;
+    animation:pulse-green 2.5s infinite; transition:transform 0.2s;
+  }
+  .float-wa:hover { transform:scale(1.1); }
+  .float-wa svg { width:30px; height:30px; fill:#fff; }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from{opacity:0;transform:translateY(22px)} to{opacity:1;transform:translateY(0)} }
+  @keyframes pulse-green {
+    0%,100%{box-shadow:0 6px 24px rgba(37,211,102,0.5)}
+    50%{box-shadow:0 6px 40px rgba(37,211,102,0.85)}
+  }
+
+  @media(max-width:640px){
+    .pricing-card{padding:2rem 1.4rem}
+    nav{padding:1rem 4%}
+    .hero h1{font-size:clamp(1.8rem,7vw,2.5rem)}
+  }
+</style>
+</head>
+<body>
+
+<!-- FLOAT WHATSAPP -->
+<a class="float-wa" href="https://wa.me/917550182606?text=வணக்கம்!%20SMM%20Level%202%20Coaching%20பற்றி%20பேச%20விரும்புகிறேன்." target="_blank" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">📱 SMM Coaching – Chennai</div>
+  <a class="nav-cta" href="https://wa.me/917550182606?text=வணக்கம்!%20Free%20Clarity%20Call%20வேண்டும்." target="_blank">Free Clarity Call 💬</a>
+</nav>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <div class="hero-badge">🔥 Limited Seats — Chennai One-to-One Coaching</div>
+  <h1>
+    Social Media-ல Ads போட்டும்<br/>
+    <span class="grad-text">Result வரலையா?</span>
+    <em>Makeup Artists · Catering · Real Estate · Finance · Skincare</em>
+  </h1>
+  <p class="hero-sub">
+    Marketing தெரிந்தும் business grow ஆகாத frustration-க்கு end!<br/>
+    Guessing இல்ல. Confusion இல்ல.<br/>
+    <strong style="color:#e0c8ff;">Step-by-step One-to-One Business Growth Coaching — just ₹3,000-க்கு.</strong>
+  </p>
+  <div class="hero-proof">
+    <span class="proof-chip">✅ No theory</span>
+    <span class="proof-chip">✅ No recorded videos</span>
+    <span class="proof-chip">✅ Your business-க்கே apply பண்ணி கற்றுத்தருவேன்</span>
+  </div>
+  <div class="hero-cta-group">
+    <a class="btn-primary" href="https://wa.me/917550182606?text=வணக்கம்!%20Free%20Clarity%20Call%20வேண்டும்.%20SMM%20Coaching%20பற்றி%20பேச%20விரும்புகிறேன்." target="_blank">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      👉 WhatsApp-ல் பேசலாம் (Free Clarity Call)
+    </a>
+  </div>
+  <div class="hero-cta-note">Sales call இல்லை — genuine guidance மட்டுமே 🙏</div>
+</section>
+
+<!-- ═══ PAIN + PROBLEM ═══ -->
+<section class="pain-section">
+  <div class="section-label">உண்மையான பிரச்சனை என்ன?</div>
+  <h2 class="section-title pain-content">Problem உங்களிடம் இல்லை.<br/><span class="grad-text">Guidance-ல தான் issue.</span></h2>
+  <div class="pain-content">
+    <p class="ta" style="color:#c4a8e8; font-size:0.95rem; margin-bottom:1rem;">நீங்கள் effort போடலனு இல்லை. நீங்கள் try பண்ணீர்கள்:</p>
+    <div class="pain-did">
+      <div class="pain-did-item"><span class="tick">✅</span>Ads போட்டீர்கள்</div>
+      <div class="pain-did-item"><span class="tick">✅</span>Reels போட்டீர்கள்</div>
+      <div class="pain-did-item"><span class="tick">✅</span>Videos upload பண்ணீர்கள்</div>
+    </div>
+    <p class="pain-but">ஆனால்... இது நடந்தது 👇</p>
+    <div class="pain-problems">
+      <div class="prob"><span class="x">❌</span><span>Enquiries quality இல்லை — time waste ஆனது</span></div>
+      <div class="prob"><span class="x">❌</span><span>Follow-up எப்படி பண்ணனும் தெரியல</span></div>
+      <div class="prob"><span class="x">❌</span><span>Ad budget waste ஆனது — return இல்லை</span></div>
+      <div class="prob"><span class="x">❌</span><span>"Next என்ன பண்ணணும்?"ன்னு constant confusion</span></div>
+    </div>
+    <div class="pain-reality">
+      👉 இதுதான் 90% small business owners face பண்ணுற reality.<br/>
+      Effort இல்லாத problem இல்ல — <strong style="color:#ff9de2;">Right guidance இல்லாத problem.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ MONEY BLEED ═══ -->
+<section class="money-section">
+  <div class="section-label">செலவு கணக்கு</div>
+  <h2 class="section-title">Every month தெரியாம செலவு ஆகும் money 💸</h2>
+  <p class="section-sub">Right guidance இல்லாம இப்படி தான் money போகுது:</p>
+  <div class="money-table-wrap">
+    <table>
+      <thead><tr><th>எங்கே போகுது?</th><th>Approx Monthly Loss</th></tr></thead>
+      <tbody>
+        <tr><td>Freelancer / Agency fee</td><td>₹8,000 – ₹15,000</td></tr>
+        <tr><td>Wrong Ads (no result)</td><td>₹3,000 – ₹6,000</td></tr>
+        <tr><td>Trial & Error experiments</td><td>₹5,000+</td></tr>
+        <tr class="total-row"><td><strong>Monthly Total Loss</strong></td><td><strong>₹15,000 – ₹25,000 🔥</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="money-cta-box">
+    👉 <strong>₹3,000-க்கு clarity கிடைக்கும்னா,</strong><br/>
+    இந்த monthly loss-ஐ stop பண்ண இன்னும் delay பண்ணணுமா?<br/>
+    <strong>ஒரே ஒரு client-ல course fee recover ஆகிடும்.</strong>
+  </div>
+</section>
+
+<!-- ═══ OLD WAY vs GUIDED WAY ═══ -->
+<section class="compare-section">
+  <div class="section-label">வித்தியாசம் பாருங்கள்</div>
+  <h2 class="section-title">இப்போ நீங்க போற வழி vs<br/><span class="grad-text">நான் guide பண்ணுற வழி</span></h2>
+  <div class="compare-grid">
+    <div class="compare-col">
+      <div class="compare-header bad">இப்போ நடக்குறது ❌</div>
+      <ul class="compare-items bad-list">
+        <li><span class="ci-bad">✗</span>Random YouTube videos</li>
+        <li><span class="ci-bad">✗</span>Guessing-ல் Ads போடுறீங்க</li>
+        <li><span class="ci-bad">✗</span>No feedback, no review</li>
+        <li><span class="ci-bad">✗</span>Money waste-ஆகும் fear</li>
+        <li><span class="ci-bad">✗</span>Constant confusion</li>
+      </ul>
+    </div>
+    <div class="compare-col">
+      <div class="compare-header good">Guided Coaching ✅</div>
+      <ul class="compare-items good-list">
+        <li><span class="ci-good">✓</span>Clear roadmap for your business</li>
+        <li><span class="ci-good">✓</span>Proven ad structure</li>
+        <li><span class="ci-good">✓</span>Direct WhatsApp support</li>
+        <li><span class="ci-good">✓</span>Controlled testing — no waste</li>
+        <li><span class="ci-good">✓</span>Confidence & clarity</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ OUTCOMES ═══ -->
+<section class="outcomes-section">
+  <div class="section-label">நீங்கள் achieve பண்ணுவீர்கள்</div>
+  <h2 class="section-title">Course முடிந்த பிறகு<br/><span class="grad-text">நீங்கள் என்ன செய்ய முடியும்?</span></h2>
+  <div class="outcomes-grid">
+    <div class="outcome-card"><span class="outcome-tick">✅</span><p>உங்கள் business-க்கு right platform identify பண்ண முடியும்</p></div>
+    <div class="outcome-card"><span class="outcome-tick">✅</span><p>Ads run பண்ணும்போது fear இல்ல — confident ஆக செயல்படலாம்</p></div>
+    <div class="outcome-card"><span class="outcome-tick">✅</span><p>Reel & Video content-க்கான idea clarity கிடைக்கும்</p></div>
+    <div class="outcome-card"><span class="outcome-tick">✅</span><p>₹100–₹300 daily budget-ல் consistent enquiries generate பண்ணலாம்</p></div>
+    <div class="outcome-card"><span class="outcome-tick">✅</span><p>Freelancer-ஐ depend ஆக வேண்டிய situation இல்ல — self-sufficient ஆவீர்கள்</p></div>
+  </div>
+  <div class="outcome-footer">👉 Skill மட்டும் இல்ல — Confidence build ஆகும். 💪</div>
+</section>
+
+<!-- ═══ WHO IT'S FOR ═══ -->
+<section class="for-section">
+  <div class="section-label">யாருக்காக?</div>
+  <h2 class="section-title">இந்த Coaching யாருக்காக?</h2>
+  <div class="for-grid">
+    <div class="for-col for-yes">
+      <span class="for-col-title">✔ இவர்களுக்காக</span>
+      <ul class="for-list">
+        <li><span class="for-icon">✔</span>Chennai-ல் small business run பண்ணுறவர்கள்</li>
+        <li><span class="for-icon">✔</span>Marketing-ல் interest இருக்கு, clarity இல்லாதவர்கள்</li>
+        <li><span class="for-icon">✔</span>"Course வாங்கிட்டேன், use ஆகல"ன்னு feeling உள்ளவர்கள்</li>
+        <li><span class="for-icon">✔</span>One-to-One attention விரும்புறவர்கள்</li>
+      </ul>
+    </div>
+    <div class="for-col for-no">
+      <span class="for-col-title">❌ இவர்களுக்கு இல்ல</span>
+      <ul class="for-list">
+        <li><span class="for-icon">❌</span>Shortcut மட்டும் தேடுறவர்கள்</li>
+        <li><span class="for-icon">❌</span>"One video-ல் success" expect பண்ணுறவர்கள்</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ HOW IT WORKS ═══ -->
+<section class="how-section">
+  <div class="section-label">எப்படி நடக்கும்?</div>
+  <h2 class="section-title">நான் எப்படி<br/><span class="grad-text">Guide பண்ணுவேன்?</span></h2>
+  <div class="how-steps">
+    <div class="how-step"><div class="step-num">1</div><div class="step-content"><h3>உங்கள் Business-ஐ Understand பண்ணுவேன்</h3><p>உங்கள் industry, target customers, current challenges — எல்லாவற்றையும் முதலில் deeply understand பண்ணுவேன்.</p></div></div>
+    <div class="how-step"><div class="step-num">2</div><div class="step-content"><h3>Right Platform Select பண்ணுவோம்</h3><p>உங்கள் business-க்கு Facebook better-ஆ, Instagram better-ஆ, YouTube better-ஆ — data-based-ஆ decide பண்ணுவோம்.</p></div></div>
+    <div class="how-step"><div class="step-num">3</div><div class="step-content"><h3>Content + Ads Structure Design பண்ணுவோம்</h3><p>Canva designs, ad copy, targeting — உங்கள் specific business-க்காக custom-ஆக create பண்ணுவோம்.</p></div></div>
+    <div class="how-step"><div class="step-num">4</div><div class="step-content"><h3>Live-ஆ Run பண்ணி Result Check</h3><p>Theory இல்ல — live session-ல் உங்கள் actual account-ல் run பண்ணி results பாப்போம்.</p></div></div>
+    <div class="how-step"><div class="step-num">5</div><div class="step-content"><h3>WhatsApp-ல் Continuous Support</h3><p>Course-க்கு பிறகும் doubts வந்தால் WhatsApp-ல் message பண்ணலாம். Always available.</p></div></div>
+  </div>
+  <div class="how-note">👉 Same template எல்லோருக்கும் இல்லை. Every business-க்கும் <strong>custom approach.</strong></div>
+</section>
+
+<!-- ═══ CURRICULUM ═══ -->
+<section class="curriculum" id="curriculum">
+  <div class="section-label">Course Structure</div>
+  <h2 class="section-title">15 Hours – <span class="grad-text">Fully Practical</span></h2>
+  <p class="section-sub">Theory explain பண்ணுவது 20% — Apply பண்ணுவது 80%.</p>
+  <div class="curriculum-pills">
+    <div class="curr-pill">🎨 Canva-ல் Business Designs</div>
+    <div class="curr-pill">📘 Facebook Ads (Lead & Enquiry focused)</div>
+    <div class="curr-pill">📸 Instagram Ads + Reels Strategy</div>
+    <div class="curr-pill">▶️ YouTube Setup & Video Basics</div>
+    <div class="curr-pill">💰 Budget Control & Enquiry Handling</div>
+  </div>
+  <div class="curr-ratio">
+    <div class="ratio-item"><div class="num">20%</div><div class="lbl">Theory</div></div>
+    <div class="ratio-divider">→</div>
+    <div class="ratio-item"><div class="num">80%</div><div class="lbl ta">Hands-on Practice</div></div>
+  </div>
+</section>
+
+<!-- ═══ PRICING ═══ -->
+<section class="pricing-section">
+  <div class="section-label">Investment</div>
+  <h2 class="section-title" style="text-align:center; margin-bottom:2rem;">Investment — Not a fee</h2>
+  <div class="pricing-card">
+    <div class="price-badge">Level 2 – Full Coaching</div>
+    <div class="price-label">வெறும் ஒரு முறை மட்டுமே</div>
+    <div class="price-amount">₹3,000</div>
+    <div class="price-period">One-time · Hidden fees இல்லவே இல்ல 🙅</div>
+    <ul class="price-features">
+      <li><span class="check">✦</span>15 மணி நேர One-to-One Live Training</li>
+      <li><span class="check">✦</span>Canva-ல் Business Design</li>
+      <li><span class="check">✦</span>Facebook Ads Setup & Management</li>
+      <li><span class="check">✦</span>Instagram Ads & Reels Strategy</li>
+      <li><span class="check">✦</span>YouTube Channel Creation & Video Upload</li>
+      <li><span class="check">✦</span>Flexible Session Scheduling</li>
+      <li><span class="check">✦</span>WhatsApp Doubt Support</li>
+      <li><span class="check">✦</span>Course Completion Certificate</li>
+    </ul>
+    <a class="btn-primary" style="width:100%; justify-content:center; font-size:1rem;" href="https://wa.me/917550182606?text=வணக்கம்!%20SMM%20Level%202%20Coaching-ல்%20%E2%82%B93%2C000-க்கு%20சேர%20விரும்புகிறேன்." target="_blank">
+      💬 இப்போதே WhatsApp பண்ணுங்கள்
+    </a>
+    <div class="price-value-note">
+      👉 ஒரு wrong ad campaign-ல போகுற money-க்கும் குறைவு இந்த investment.<br/>
+      <strong>ஒரே ஒரு new client — course fee recover ஆகிவிடும்.</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ RISK REVERSAL ═══ -->
+<section class="risk-section">
+  <div class="risk-card">
+    <span class="risk-emoji">🤝</span>
+    <h3>Still unsure? No pressure.</h3>
+    <p>
+      WhatsApp-ல் பேசலாம்.<br/>
+      உங்கள் business-க்கு இந்த coaching useful-ஆ இருக்கும்னு நீங்களே judge பண்ணுங்க.<br/>
+      Useful-ஆ இருந்தா மட்டும் join பண்ணுங்க.
+    </p>
+    <a class="btn-primary" style="justify-content:center;" href="https://wa.me/917550182606?text=வணக்கம்!%20Coaching%20பற்றி%20கொஞ்சம்%20பேசலாமா?" target="_blank">
+      💬 Free-ஆ பேசலாம்
+    </a>
+    <p class="risk-note" style="margin-top:1rem;">No forcing. No fake urgency. Honest guidance மட்டுமே. 🙏</p>
+  </div>
+</section>
+
+<!-- ═══ TESTIMONIALS ═══ -->
+<section class="testimonials">
+  <div class="section-label">Students சொல்வதை கேளுங்கள்</div>
+  <h2 class="section-title">Real Results. <span class="grad-text">Real Business Owners.</span></h2>
+  <div class="testi-grid">
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-result">🎯 Result: 3 Bridal Bookings in Month 1</div>
+      <p>"First month-ல 3 bridal enquiries வந்தது. Course fee recover ஆகிட்டது — அதுவும் first client-லயே!"</p>
+      <div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya R.</div><div class="testi-role">Makeup Artist, Chennai</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-result">🎯 Result: ₹200/day-ல் Consistent Calls</div>
+      <p>"₹200/day ad-ல் consistent enquiry calls வருது. One-to-one teaching-தான் என்னோட business-ஐ மாற்றியது."</p>
+      <div class="testi-author"><div class="testi-avatar">K</div><div><div class="testi-name">Karthik S.</div><div class="testi-role">Catering Owner, Velachery</div></div></div>
+    </div>
+    <div class="testi-card">
+      <div class="stars">★★★★★</div>
+      <div class="testi-result">🎯 Result: 400 Subscribers in 3 Months</div>
+      <p>"YouTube channel-ல 3 மாதத்தில் 400 subscribers. Ads இல்லாமலே video மூலம் property enquiries வருகிறது."</p>
+      <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Rajan M.</div><div class="testi-role">Real Estate Agent, OMR</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ FAQ ═══ -->
+<section class="faq-section">
+  <div class="section-label">கேள்விகள் & பதில்கள்</div>
+  <h2 class="section-title" style="margin-bottom:1rem;">அடிக்கடி கேட்கப்படும் கேள்விகள்</h2>
+  <div class="faq-item">
+    <div class="faq-q">முன்பு அனுபவம் இல்லாமல் கற்கலாமா? <span>+</span></div>
+    <div class="faq-a">நிச்சயமாக! இந்த coaching முற்றிலும் beginners-க்காக design செய்யப்பட்டுள்ளது. Scratch-லிருந்து step-by-step கற்றுத்தருவேன்.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Weekend-ல் sessions எடுக்கலாமா? <span>+</span></div>
+    <div class="faq-a">ஆம்! Sessions முற்றிலும் flexible. Weekday, Evening அல்லது Weekend — உங்கள் availability-க்கு ஏற்ப schedule பண்ணலாம்.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Online-ஆ இல்ல Offline-ஆ? <span>+</span></div>
+    <div class="faq-a">இந்த coaching முற்றிலும் Online மட்டுமே — Google Meet மூலம் நடைபெறும். Join ஆவதற்கு ஒரு Laptop இருந்தால் போதும். எங்கிருந்தும் comfortable-ஆ கற்றுக்கொள்ளலாம்.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Ads-க்கு எவ்வளவு budget தேவை? <span>+</span></div>
+    <div class="faq-a">₹200/day-லிருந்து start பண்ணலாம் — இது starting point மட்டுமே. Business-க்கு business budget மாறும். உங்கள் specific business-க்கு எந்த budget suitable என்று coaching-ல் clearly discuss பண்ணுவோம். Minimum budget-ல் maximum results எப்படி பெறுவது என்று specifically கற்றுத்தருவேன்.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q">Course முடிந்தாலும் doubts வந்தால்? <span>+</span></div>
+    <div class="faq-a">Course முடிந்த பிறகும் WhatsApp-ல் directly message பண்ணி doubts கேட்கலாம். உங்கள் business grow ஆவதை பார்க்கணும் — அதுதான் என்னோட goal.</div>
+  </div>
+</section>
+
+<!-- ═══ FINAL CTA ═══ -->
+<section class="final-cta">
+  <h2>Guess பண்ணி money waste பண்ணுறதை<br/><span class="grad-text">இன்னும் continue பண்ணப்போறீங்களா?</span></h2>
+  <p class="sub" style="margin-top:1rem;">
+    ஒரு clear roadmap-க்கு ₹3,000 invest பண்ண தயாரா?<br/>
+    உங்கள் business-க்கு honest guidance தருவேன்.
+  </p>
+  <br/>
+  <a class="btn-primary" style="font-size:1.05rem; padding:1.1rem 2.5rem;" href="https://wa.me/917550182606?text=வணக்கம்!%20SMM%20Coaching-ல்%20சேர%20விரும்புகிறேன்.%20Details%20சொல்லுங்கள்." target="_blank">
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    👉 WhatsApp-ல் message பண்ணுங்கள்
+  </a>
+  <p class="final-note">No forcing. No fake urgency. Your business growth-க்கு honest guidance மட்டுமே. 🙏</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>© 2026 SMM Coaching Chennai. All rights reserved.</div>
+  <div>📍 Chennai, Tamil Nadu · 📲 +91 75501 82606</div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => q.closest('.faq-item').classList.toggle('open'));
+  });
+</script>
+</body>
+</html>
