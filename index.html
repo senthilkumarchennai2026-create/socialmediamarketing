@@ -170,9 +170,10 @@
   .money-cta-box strong { color:#ff9de2; }
 
   /* ── OLD WAY vs NEW WAY ── */
-  .compare-section { padding:5rem 6%; display:flex; flex-direction:column; align-items:center; text-align:center; }
+  .compare-section { padding:5rem 6%; display:flex; flex-direction:column; align-items:center; text-align:center; overflow:hidden; }
+  .compare-section .section-title { word-break:keep-all; overflow-wrap:break-word; }
   .compare-grid { display:grid; grid-template-columns:1fr 1fr; gap:1.4rem; margin-top:2.5rem; max-width:720px; width:100%; }
-  @media(max-width:560px){ .compare-grid { grid-template-columns:1fr; } }
+  @media(max-width:600px){ .compare-grid { grid-template-columns:1fr; max-width:100%; } }
   .compare-col { border-radius:20px; overflow:hidden; }
   .compare-header {
     padding:1rem 1.5rem; font-family:'Noto Sans Tamil',sans-serif;
@@ -368,34 +369,112 @@
   }
 
   @media(max-width:640px){
-    .pricing-card{padding:2rem 1.4rem;}
+    /* NAV */
     nav{padding:0.8rem 4%; gap:0.5rem;}
-    .logo{font-size:0.8rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:55%;}
-    .nav-cta{font-size:0.72rem; padding:0.42rem 0.85rem; white-space:nowrap; flex-shrink:0;}
+    .logo{font-size:0.78rem; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:55%;}
+    .nav-cta{font-size:0.7rem; padding:0.4rem 0.8rem; white-space:nowrap; flex-shrink:0;}
+
+    /* HERO */
     .hero{padding:4rem 5% 3rem; overflow:hidden;}
-    .hero h1{font-size:clamp(1.6rem,6.5vw,2.2rem); word-break:break-word;}
-    .hero h1 em{font-size:0.68em; word-break:break-word; white-space:normal;}
-    .hero-sub{font-size:0.88rem; padding:0 0.5rem;}
-    .hero-proof{gap:0.5rem; padding:0 0.5rem;}
-    .proof-chip{font-size:0.76rem; padding:0.38rem 0.75rem;}
-    .btn-primary{font-size:0.88rem; padding:0.85rem 1.4rem; width:100%; justify-content:center;}
-    .btn-secondary{font-size:0.88rem; padding:0.85rem 1.4rem; width:100%; justify-content:center;}
+    .hero h1{font-size:clamp(1.55rem,6vw,2.1rem); word-break:break-word; overflow-wrap:break-word;}
+    .hero h1 em{font-size:0.65em; word-break:break-word; white-space:normal;}
+    .hero-sub{font-size:0.86rem; padding:0 0.5rem;}
+    .hero-proof{gap:0.5rem; padding:0 0.3rem; flex-direction:column; align-items:center;}
+    .proof-chip{font-size:0.76rem; padding:0.38rem 0.75rem; text-align:center;}
     .hero-cta-group{flex-direction:column; align-items:center; width:100%; padding:0 1rem;}
-    .audience-grid{grid-template-columns:1fr 1fr;}
-    .compare-grid{grid-template-columns:1fr;}
-    .for-grid{grid-template-columns:1fr;}
-    .curr-ratio{flex-direction:row; gap:1rem; flex-wrap:wrap;}
-    .money-table-wrap table{font-size:0.8rem; min-width:300px;}
-    .money-table-wrap thead th{padding:0.65rem 0.9rem;}
-    .money-table-wrap tbody td{padding:0.65rem 0.9rem;}
-    .section-title{font-size:clamp(1.45rem,5vw,1.9rem);}
-    .how-steps::before{left:20px;}
-    .testi-grid{grid-template-columns:1fr;}
+    .btn-primary{font-size:0.86rem; padding:0.85rem 1.2rem; width:100%; justify-content:center;}
+    .btn-secondary{font-size:0.86rem; padding:0.85rem 1.2rem; width:100%; justify-content:center;}
+
+    /* GLOBAL */
+    .section-title{font-size:clamp(1.35rem,5vw,1.8rem); word-break:break-word; overflow-wrap:break-word;}
+    .section-label{font-size:0.66rem;}
+    .section-sub{font-size:0.86rem; padding:0 0.3rem;}
+
+    /* PAIN */
+    .pain-section{padding:3.5rem 5%;}
+    .pain-content{padding:0;}
+    .pain-did-item{font-size:0.83rem; padding:0.6rem 0.9rem;}
+    .pain-problems .prob{font-size:0.82rem; padding:0.55rem 0.85rem;}
+    .pain-reality{font-size:0.82rem; padding:0.9rem 1rem;}
+    .pain-but{font-size:0.95rem;}
+
+    /* MONEY */
+    .money-section{padding:3.5rem 5%;}
+    .money-table-wrap{width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch;}
+    .money-table-wrap table{font-size:0.76rem; min-width:260px; width:100%;}
+    .money-table-wrap thead th{padding:0.55rem 0.75rem; font-size:0.72rem;}
+    .money-table-wrap tbody td{padding:0.55rem 0.75rem;}
+    .money-cta-box{font-size:0.82rem; padding:0.9rem 1rem; margin-top:1.2rem;}
+
+    /* COMPARE */
+    .compare-section{padding:3.5rem 5%; overflow:hidden;}
+    .compare-grid{grid-template-columns:1fr; gap:0.9rem; max-width:100%;}
+    .compare-header{font-size:0.86rem; padding:0.75rem 1rem;}
+    .compare-items li{font-size:0.8rem; padding:0.6rem 0.9rem;}
+
+    /* OUTCOMES */
+    .outcomes-section{padding:3.5rem 5%;}
     .outcomes-grid{grid-template-columns:1fr;}
-    .why-grid{grid-template-columns:1fr;}
+    .outcome-card{padding:1rem 1.1rem;}
+    .outcome-card p{font-size:0.82rem;}
+    .outcome-footer{font-size:0.85rem; padding:0.9rem 1.1rem; display:block; width:100%; text-align:center;}
+
+    /* WHO FOR */
+    .for-section{padding:3.5rem 5%;}
+    .for-grid{grid-template-columns:1fr; max-width:100%;}
+    .for-list li{font-size:0.8rem; padding:0.55rem 0.85rem;}
+
+    /* HOW IT WORKS */
+    .how-section{padding:3.5rem 5%;}
+    .how-steps{max-width:100%;}
+    .how-steps::before{left:19px;}
+    .step-num{width:38px; height:38px; font-size:0.85rem; flex-shrink:0;}
+    .step-content h3{font-size:0.88rem;}
+    .step-content p{font-size:0.78rem;}
+    .how-note{font-size:0.82rem; padding:0.85rem 1rem; max-width:100%;}
+
+    /* CURRICULUM */
+    .curriculum{padding:3.5rem 5%;}
+    .curriculum-pills{gap:0.6rem;}
+    .curr-pill{font-size:0.78rem; padding:0.55rem 0.9rem;}
+    .curr-ratio{flex-direction:row; gap:1rem; flex-wrap:wrap; justify-content:center; padding:1rem;}
+    .ratio-item .num{font-size:1.5rem;}
+    .ratio-item .lbl{font-size:0.72rem;}
+
+    /* PRICING */
+    .pricing-section{padding:3.5rem 5%;}
+    .pricing-card{padding:1.8rem 1.2rem;}
+    .price-amount{font-size:2.8rem;}
+    .price-features li{font-size:0.8rem;}
+    .price-value-note{font-size:0.8rem;}
+
+    /* RISK */
+    .risk-section{padding:2.5rem 5%;}
+    .risk-card{padding:1.8rem 1.2rem;}
+    .risk-card h3{font-size:1.1rem;}
+    .risk-card p{font-size:0.85rem;}
+
+    /* TESTIMONIALS */
+    .testimonials{padding:3.5rem 5%;}
+    .testi-grid{grid-template-columns:1fr;}
+    .testi-card p{font-size:0.82rem;}
+
+    /* FAQ */
+    .faq-section{padding:3rem 5%;}
+    .faq-q{font-size:0.86rem;}
+    .faq-a{font-size:0.8rem;}
+
+    /* FINAL CTA */
     .final-cta{padding:4rem 5%;}
-    .float-wa{width:52px; height:52px; bottom:1.2rem; right:1.2rem;}
-    .float-wa svg{width:26px; height:26px;}
+    .final-cta h2{font-size:clamp(1.4rem,5vw,1.9rem); word-break:break-word; overflow-wrap:break-word;}
+    .final-cta .sub{font-size:0.88rem;}
+
+    /* FLOAT WA */
+    .float-wa{width:50px; height:50px; bottom:1.2rem; right:1.2rem;}
+    .float-wa svg{width:25px; height:25px;}
+
+    /* FOOTER */
+    footer{flex-direction:column; text-align:center; padding:1.5rem 5%; font-size:0.76rem; gap:0.5rem;}
   }
 </style>
 </head>
